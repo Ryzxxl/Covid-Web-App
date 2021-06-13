@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+</head>
+<style type="text/css">
+    body {
+  background-image: url('https://images.pexels.com/photos/956999/milky-way-starry-sky-night-sky-star-956999.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');">
+');
+}
+    .container{
+            margin-top: 70px;
+            margin-bottom: 10px;
+            border-radius: 15px;
+
+    }
+</style>
+
+<body>
+    
+    <h1 style="color: white;text-align: center;margin-top: 70px;"><span style="color: red;font-size:90px">COVID-19</span> WORLDWIDE DATA</h1>
+     <form style="margin-top: 100px;margin-bottom: 50px" method="post" class="d-flex justify-content-center align-items-center" action="">
+        {% csrf_token %}
+    <select class ="form-control" style="width: 200px" name="selectedcountry">
+    {% for country in mylist %}
+    <option>{{country}}</option>
+    {% endfor %}
+    
+    </select>
+    <input type="submit" class="btn btn-danger" name="">
+    </form>
+      <h1 style="color:orange;text-align: center;height: 100px;font-size:70px">{{selectedcountry}}</h1>
+   
+    <div class="d-flex justify-content-center align-items-center;">
+        <div class="container" style="background-color: orange;height: 100px;width:205px">
+            <h1 style="text-align: center;">{{total}}</h1>
+            <p style="font-weight: bold; text-align: center">Total</p>
+            
+        </div>
+      <div class="container" style="background-color: green;height: 100px;width:200px">
+            <h1 style="text-align: center;color: white">{{recovered}}</h1>
+            <p style="font-weight: bold; text-align: center">Recovered</p>
+        </div>
+          <div class="container" style="background-color: yellow;height: 100px;width:200px">
+            <h1 style="text-align: center;">{{active}}</h1>
+            <p style="font-weight: bold; text-align: center">Active</p>
+
+        </div>
+    </div>
+    <div class="d-flex justify-content-center align-items-center">
+    <div class="container" style="background-color:skyblue ;height: 100px;width:200px">
+            <h1 style="text-align: center;">{{new}}</h1>
+            <p style="font-weight: bold; text-align: center">New Cases</p>
+
+        </div>
+        <div class="container" style="background-color: grey;height: 100px;width:200px">
+            <h1 style="text-align: center;color: white">{{deaths}}</h1>
+            <p style="font-weight: bold; text-align: center">Deaths</p>
+
+        </div> 
+        <div class="container" style="background-color:red ;height: 100px;width:200px">
+            <h1 style="text-align: center;color: white">{{critical}}</h1>
+                        <p style="font-weight: bold; text-align: center">Critical</p>
+
+        </div>
+    </div>
+    <div class="d-flex justify-content-center align-items-center">
+         <p style="position: absolute;bottom: 20px;color:grey;text-align: center;">Developed by<span style="color: white"> Rakshit Khajuria</span></p>
+         
+    </div>
+   
+
+</body>
+</html>
